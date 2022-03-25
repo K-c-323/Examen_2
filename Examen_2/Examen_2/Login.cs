@@ -35,7 +35,13 @@ namespace Examen_2
             if (Usuario == null)
             {
                 MessageBox.Show("Codigo o Contraseña Incorrecta, Intentelo de nuevo");
+                return;
+
             }
+
+            FrmMenu FrmMenu = new FrmMenu();
+            FrmMenu.Show();
+            this.Hide(); 
 
 
 

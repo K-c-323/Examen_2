@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CodigoTextBox = new System.Windows.Forms.TextBox();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
@@ -41,8 +42,10 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.CancelarButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ListaProductoDataGridView = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +59,7 @@
             // 
             // CodigoTextBox
             // 
+            this.CodigoTextBox.Enabled = false;
             this.CodigoTextBox.Location = new System.Drawing.Point(155, 38);
             this.CodigoTextBox.Name = "CodigoTextBox";
             this.CodigoTextBox.Size = new System.Drawing.Size(155, 20);
@@ -63,6 +67,7 @@
             // 
             // DescripcionTextBox
             // 
+            this.DescripcionTextBox.Enabled = false;
             this.DescripcionTextBox.Location = new System.Drawing.Point(155, 83);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
             this.DescripcionTextBox.Size = new System.Drawing.Size(155, 20);
@@ -79,10 +84,12 @@
             // 
             // PrecioTextBox
             // 
+            this.PrecioTextBox.Enabled = false;
             this.PrecioTextBox.Location = new System.Drawing.Point(155, 119);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(155, 20);
             this.PrecioTextBox.TabIndex = 5;
+            this.PrecioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PrecioTextBox_KeyPress);
             // 
             // label3
             // 
@@ -95,10 +102,12 @@
             // 
             // ExistenciaTextBox
             // 
+            this.ExistenciaTextBox.Enabled = false;
             this.ExistenciaTextBox.Location = new System.Drawing.Point(155, 158);
             this.ExistenciaTextBox.Name = "ExistenciaTextBox";
             this.ExistenciaTextBox.Size = new System.Drawing.Size(155, 20);
             this.ExistenciaTextBox.TabIndex = 7;
+            this.ExistenciaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ExistenciaTextBox_KeyPress);
             // 
             // label4
             // 
@@ -117,6 +126,7 @@
             this.NuevoButton.TabIndex = 8;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // ModificarButton
             // 
@@ -126,24 +136,29 @@
             this.ModificarButton.TabIndex = 9;
             this.ModificarButton.Text = "Modificar";
             this.ModificarButton.UseVisualStyleBackColor = true;
+            this.ModificarButton.Click += new System.EventHandler(this.ModificarButton_Click);
             // 
             // GuardarButton
             // 
+            this.GuardarButton.Enabled = false;
             this.GuardarButton.Location = new System.Drawing.Point(243, 206);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(96, 31);
             this.GuardarButton.TabIndex = 10;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
+            this.EliminarButton.Enabled = false;
             this.EliminarButton.Location = new System.Drawing.Point(345, 206);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(96, 31);
             this.EliminarButton.TabIndex = 11;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // CancelarButton
             // 
@@ -153,21 +168,27 @@
             this.CancelarButton.TabIndex = 12;
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
-            // dataGridView1
+            // ListaProductoDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 243);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(571, 179);
-            this.dataGridView1.TabIndex = 13;
+            this.ListaProductoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaProductoDataGridView.Location = new System.Drawing.Point(2, 243);
+            this.ListaProductoDataGridView.Name = "ListaProductoDataGridView";
+            this.ListaProductoDataGridView.Size = new System.Drawing.Size(571, 179);
+            this.ListaProductoDataGridView.TabIndex = 13;
+            this.ListaProductoDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaProductoDataGridView_CellContentClick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 425);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ListaProductoDataGridView);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.GuardarButton);
@@ -183,7 +204,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmProducto";
             this.Text = "FrmProducto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmProducto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ListaProductoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +227,7 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button CancelarButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ListaProductoDataGridView;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
