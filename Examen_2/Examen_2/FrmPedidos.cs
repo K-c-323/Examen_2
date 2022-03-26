@@ -45,5 +45,53 @@ namespace Examen_2
         {
             DetalledataGridView.DataSource = DetallePedidoslista;
         }
+
+        private void CodigoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                producto = new Producto();
+                producto = productoDA.GetProductoPorCodigo(CodigoTextBox.Text);
+                DescripcionTextBox.Text = producto.Descripcion;
+                CantidadTextBox.Focus();
+            }
+            else
+            {
+                producto = null;
+                DescripcionTextBox.Clear();
+                CantidadTextBox.Clear();
+            }
+        }
+
+        private void CantidadTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && !string.IsNullOrEmpty(CantidadTextBox.Text))
+            {
+
+                DetallePedido detallePedido = new DetallePedido();
+                detallePedido.CodigoProducto = producto.Codigo;
+                detallePedido.Descripcion = producto.Descripcion;
+                detallePedido.Cantidad = Convert.ToInt32(CantidadTextBox.Text);
+                detallePedido.Precio = producto.Precio;
+                detallePedido.Total = producto.Precio * Convert.ToInt32(CantidadTextBox.Text);
+
+                subTotal += detallePedido.Total;
+                isv = subTotal * 0.15M;
+                totalAPagar = subTotal + isv;
+
+                SubTotalTextBox.Text = subTotal.ToString();
+                ISVTextBox.Text = isv.ToString();
+                TotalTextBox.Text = totalAPagar.ToString();
+
+                DetallePedidoslista.Add(detallePedido);
+                DetalledataGridView.DataSource = null;
+                DetalledataGridView.DataSource = DetallePedidoslista;
+            }
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
