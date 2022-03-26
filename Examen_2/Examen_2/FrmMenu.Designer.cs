@@ -34,10 +34,14 @@
             this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.PedidoToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
+            this.toolStripTabItem2.Panel.SuspendLayout();
             this.toolStripEx1.SuspendLayout();
+            this.toolStripEx2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControlAdv1
@@ -64,7 +68,7 @@
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(770, 145);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -72,6 +76,7 @@
             this.ribbonControlAdv1.TabIndex = 0;
             this.ribbonControlAdv1.Text = "ribbonControlAdv1";
             this.ribbonControlAdv1.ThemeName = "Office2016";
+            this.ribbonControlAdv1.Click += new System.EventHandler(this.ribbonControlAdv1_Click);
             // 
             // toolStripTabItem1
             // 
@@ -96,6 +101,7 @@
             // 
             // ribbonControlAdv1.ribbonPanel2
             // 
+            this.toolStripTabItem2.Panel.Controls.Add(this.toolStripEx2);
             this.toolStripTabItem2.Panel.Name = "ribbonPanel2";
             this.toolStripTabItem2.Panel.ScrollPosition = 0;
             this.toolStripTabItem2.Panel.TabIndex = 3;
@@ -134,6 +140,33 @@
             this.toolStripButton1.Text = "Productos";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripEx2
+            // 
+            this.toolStripEx2.AutoSize = false;
+            this.toolStripEx2.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx2.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx2.Image = null;
+            this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PedidoToolStripButton});
+            this.toolStripEx2.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx2.Name = "toolStripEx2";
+            this.toolStripEx2.Office12Mode = false;
+            this.toolStripEx2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.toolStripEx2.Size = new System.Drawing.Size(290, 79);
+            this.toolStripEx2.TabIndex = 0;
+            // 
+            // PedidoToolStripButton
+            // 
+            this.PedidoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.PedidoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("PedidoToolStripButton.Image")));
+            this.PedidoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.PedidoToolStripButton.Name = "PedidoToolStripButton";
+            this.PedidoToolStripButton.Size = new System.Drawing.Size(47, 62);
+            this.PedidoToolStripButton.Text = "Pedido";
+            this.PedidoToolStripButton.Click += new System.EventHandler(this.PedidoToolStripButton_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,8 +182,11 @@
             this.ribbonControlAdv1.ResumeLayout(false);
             this.ribbonControlAdv1.PerformLayout();
             this.toolStripTabItem1.Panel.ResumeLayout(false);
+            this.toolStripTabItem2.Panel.ResumeLayout(false);
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
+            this.toolStripEx2.ResumeLayout(false);
+            this.toolStripEx2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -162,5 +198,7 @@
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem2;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx2;
+        private System.Windows.Forms.ToolStripButton PedidoToolStripButton;
     }
 }

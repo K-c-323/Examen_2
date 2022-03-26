@@ -186,6 +186,9 @@ namespace Examen_2
             }
         }
 
+       
+
+
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             this.Close();

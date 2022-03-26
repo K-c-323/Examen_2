@@ -32,12 +32,14 @@ namespace Examen_2
 
 
         FrmProducto frmProducto= null;
+        FrmPedidos frmpedido = null; 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (frmProducto == null)
             {
                 frmProducto = new FrmProducto();
                 frmProducto.MdiParent = this;
+                frmProducto.FormClosed += FrmProducto_FormClosed;
                 frmProducto.Show();
             }
             else
@@ -45,7 +47,36 @@ namespace Examen_2
                 frmProducto.Activate();
             }
 
+        }
 
+        private void FrmProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmProducto = null;
+        }
+
+        private void ribbonControlAdv1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PedidoToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (frmpedido == null)
+            {
+                frmpedido = new FrmPedidos();
+                frmpedido.MdiParent = this;
+                frmpedido.FormClosed += Frmpedido_FormClosed;
+                frmpedido.Show();
+            }
+            else
+            {
+                frmpedido.Activate();
+            }
+        }
+
+        private void Frmpedido_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmpedido = null;
         }
     }
 }
